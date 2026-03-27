@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+/* === Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+/* === Fontshare - Geist alternative (self-hosted CDN) === */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap');
+
+/* === CSS Variables === */
+:root {
+  --color-bg: #0a0a0a;
+  --color-text: #fafafa;
+  --color-text-muted: #888888;
+  --color-accent: #f59e0b;
+  --color-surface: #141414;
+  --color-border: #2a2a2a;
+
+  --font-sans: 'Satoshi', 'Noto Sans SC', system-ui, sans-serif;
+  --font-mono: 'Satoshi', monospace;
+
+  --spacing-section: clamp(4rem, 10vw, 8rem);
+}
+
+/* === Base Styles === */
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === Scrollbar Styling === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* === Selection === */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* === Focus Visible === */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
