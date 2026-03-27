@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, ReactNode } from 'react';
+import { createContext, useContext, ReactNode, useState, useEffect } from 'react';
 
 interface LenisInstance {
   raf: (time: number) => void;
@@ -21,7 +21,12 @@ const LenisContext = createContext<LenisContextValue>({
 });
 
 export function LenisProvider({ children }: { children: ReactNode }) {
-  const lenis = (window as any).__lenis || null;
+  const [lenis, setLenis] = useState<LenisInstance | null>(null);
+
+  useEffect(() => {
+    setLenis((window as any).__lenis || null);
+  }, []);
+
   const scrollTo = (target: string | number, options?: object) => {
     if ((window as any).__lenisScrollTo) {
       (window as any).__lenisScrollTo(target, options);

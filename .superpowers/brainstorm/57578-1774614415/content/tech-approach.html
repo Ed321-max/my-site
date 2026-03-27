@@ -1,0 +1,19 @@
+<h2>关键实现方案</h2>
+<p class="subtitle">几个核心问题的技术选择</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>GSAP ScrollTrigger + Framer Motion 分工</h3>
+      <p>GSAP 处理滚动渐入和磁性鼠标，Lenis 做平滑滚动，Framer Motion 处理组件级微交互（hover、点击）。各司其职。</p>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Framer Motion 统一动画</h3>
+      <p>主要动画用 Framer Motion，滚动渐入用 useScroll + useTransform。减少库依赖，但复杂效果（如磁性鼠标）实现成本高。</p>
+    </div>
+  </div>
+</div>

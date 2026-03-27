@@ -4,16 +4,15 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useMagneticEffect } from '../hooks/useMagneticEffect';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 // TODO: Replace with your actual contact info
 const socialLinks = [
-  { label: 'Email', href: 'mailto:hello@example.com', Icon: Mail },
-  { label: 'GitHub', href: 'https://github.com', Icon: Github },
-  { label: 'LinkedIn', href: 'https://linkedin.com', Icon: Linkedin },
-  { label: 'Twitter', href: 'https://twitter.com', Icon: Twitter },
+  { label: 'Email', href: 'mailto:hello@example.com', icon: 'M' },
+  { label: 'GitHub', href: 'https://github.com', icon: 'G' },
+  { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'L' },
+  { label: 'Twitter', href: 'https://twitter.com', icon: 'T' },
 ];
 
 export default function Contact() {
@@ -69,16 +68,16 @@ export default function Contact() {
         </a>
 
         <div className="flex justify-center gap-6 mt-10">
-          {socialLinks.map(({ label, href, Icon }) => (
+          {socialLinks.map(({ label, href, icon }) => (
             <a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 flex items-center justify-center rounded-full border border-[var(--color-border)] hover:border-[var(--color-text-muted)] transition-colors"
+              className="w-12 h-12 flex items-center justify-center rounded-full border border-[var(--color-border)] hover:border-[var(--color-text-muted)] transition-colors text-sm font-medium"
               aria-label={label}
             >
-              <Icon size={18} />
+              {icon}
             </a>
           ))}
         </div>
