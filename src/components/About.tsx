@@ -34,9 +34,9 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-[var(--spacing-section)] px-6"
+      className="py-[var(--spacing-section)]"
     >
-      <div ref={contentRef} className="max-w-3xl mx-auto">
+      <div ref={contentRef} className="max-w-5xl mx-auto px-6">
         <p className="text-[var(--color-text-muted)] text-sm mb-4 tracking-widest uppercase">
           About
         </p>
@@ -49,8 +49,8 @@ export default function About() {
               className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover max-w-full"
             />
           </div>
-          <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+          <div className="flex-1 max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 leading-tight">
               长期主义者，更相信长期稳定的价值
             </h2>
             <p className="text-[var(--color-text-muted)] text-base leading-relaxed">
@@ -59,7 +59,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="space-y-6 text-[var(--color-text-muted)] text-base leading-relaxed mb-6">
+        <div className="max-w-3xl space-y-6 text-[var(--color-text-muted)] text-base leading-relaxed mb-6">
           <p>
             在做任何选择时，都更相信一套朴素但普适的价值判断：这件事能带来什么真实的改善（对自己、对他人）？它能否在更长的时间尺度上站得住，而不是只在当下看起来热闹？在现实约束与未来趋势之间，哪一种取舍更诚实、更可持续？所以比起追逐"该有的都有"，更愿意把注意力放在那些慢慢积累、但会长期改变能力与生活方式的东西上。
           </p>

@@ -48,13 +48,13 @@ export default function Blog({ items }: BlogProps) {
       <section
         ref={sectionRef}
         id="blog"
-        className="py-[var(--spacing-section)] px-6"
+        className="py-[var(--spacing-section)]"
       >
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto px-6">
           <p className="text-[var(--color-text-muted)] text-sm mb-4 tracking-widest uppercase">
             Blog
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10">
             Thoughts & <span className="text-[var(--color-accent)]">Writing</span>
           </h2>
           <p className="text-[var(--color-text-muted)]">
@@ -73,13 +73,13 @@ export default function Blog({ items }: BlogProps) {
     <section
       ref={sectionRef}
       id="blog"
-      className="py-[var(--spacing-section)] px-6"
+      className="py-[var(--spacing-section)]"
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto px-6">
         <p className="text-[var(--color-text-muted)] text-sm mb-4 tracking-widest uppercase">
           Blog
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">
           Thoughts & <span className="text-[var(--color-accent)]">Writing</span>
         </h2>
 

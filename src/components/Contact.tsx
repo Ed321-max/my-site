@@ -97,14 +97,14 @@ export default function Contact() {
       <section
         ref={sectionRef}
         id="contact"
-        className="py-[var(--spacing-section)] px-6 bg-[var(--color-surface)]"
+        className="py-[var(--spacing-section)]"
       >
-        <div ref={contentRef} className="max-w-3xl mx-auto text-center">
+        <div ref={contentRef} className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-[var(--color-text-muted)] text-sm mb-4 tracking-widest uppercase">
             Contact
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold mb-10 leading-tight">
             保持联系
           </h2>
 

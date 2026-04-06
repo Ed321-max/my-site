@@ -46,13 +46,13 @@ export default function Journal({ items }: JournalProps) {
     <section
       ref={sectionRef}
       id="moments"
-      className="py-[var(--spacing-section)] px-6 bg-[var(--color-surface)]"
+      className="py-[var(--spacing-section)] bg-[var(--color-surface)]"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto px-6">
         <p className="text-[var(--color-text-muted)] text-sm mb-4 tracking-widest uppercase">
           Journal
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">
           Moments <span className="text-[var(--color-accent)]">记录</span>
         </h2>
 
