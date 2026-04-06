@@ -85,18 +85,18 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Slow Factor
+          慢变量
         </motion.p>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight">
           <span
             ref={typewriterRef}
-            className="block h-[1.2em] overflow-hidden"
+            className="block h-[1.2em] overflow-visible"
           >
-            <span className="block">{displayText}</span>
+            <span className="block whitespace-nowrap">{displayText}</span>
           </span>
           <motion.span
-            className="inline-block w-1 h-[0.8em] bg-[var(--color-accent)] ml-2 align-middle"
+            className="inline-block w-0.5 h-[0.9em] bg-[#f5f5f7] ml-2 align-middle"
             animate={{ opacity: [1, 0] }}
             transition={{ repeat: Infinity, duration: 0.8 }}
           />
@@ -108,7 +108,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          关注那些在科技与人文交汇处不喧哗却塑造每个人的"慢因子"。
+          关注那些在科技与人文交汇处不喧哗却塑造每个人的"慢变量"。
         </motion.p>
 
         <motion.div

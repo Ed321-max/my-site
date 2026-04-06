@@ -11,14 +11,15 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const body = entry.body;
+const date = entry.data.date ? new Date(entry.data.date).toISOString().split('T')[0] : undefined;
 ---
 
 <ArticleLayout
   title={entry.title}
-  date={entry.data.date?.toISOString().split('T')[0]}
+  date={date}
   tags={entry.data.tags || []}
   backHref="/#blog"
 >
-  <Content />
+  <div set:html={body} />
 </ArticleLayout>
