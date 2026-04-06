@@ -1,0 +1,59 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('journal');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+function getRichText(value: any): string {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  if (Array.isArray(value)) {
+    return value.map((v) => v.plain_text || '').join('');
+  }
+  return '';
+}
+
+function processBody(body: string): string {
+  if (!body) return '';
+  return body.replace(/<img __ASTRO_IMAGE_="([^"]+)"[^>]*>/g, (match, encodedJson) => {
+    try {
+      const jsonStr = encodedJson
+        .replace(/&#x22;/g, '"')
+        .replace(/&#x2F;/g, '/');
+      const data = JSON.parse(jsonStr);
+      if (data.src) {
+        const filename = data.src.split('/').pop();
+        const publicUrl = `/images/notion/${filename}`;
+        return `<img src="${publicUrl}" alt="" class="w-full h-auto rounded-lg" loading="lazy" />`;
+      }
+    } catch (e) {}
+    return match;
+  });
+}
+
+const title = getRichText(entry.data.properties?.Caption?.rich_text) || 'Moment';
+const rawBody = (entry as any).rendered?.html || entry.body || '';
+const body = processBody(rawBody);
+const date = entry.data.properties?.Date?.date?.start || undefined;
+const coverImage = `/images/covers/journal-${entry.id}.webp`;
+---
+
+<ArticleLayout
+  title={title}
+  date={date}
+  tags={[]}
+  backHref="/#moments"
+>
+  <div class="mb-8 rounded-xl overflow-hidden">
+    <img src={coverImage} alt={title} class="w-full h-64 object-cover" />
+  </div>
+  <div set:html={body} />
+</ArticleLayout>
