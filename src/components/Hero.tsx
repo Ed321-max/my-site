@@ -71,7 +71,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center items-center px-6"
+      className="min-h-[85vh] flex flex-col justify-center items-center px-6"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -79,10 +79,10 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="flex flex-col items-center text-center max-w-3xl"
       >
-        <h1 className="flex justify-center items-center w-full text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight">
+        <h1 className="flex justify-center items-center w-full text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight overflow-hidden">
           <span
             ref={typewriterRef}
-            className="flex items-center h-[1.2em] overflow-visible"
+            className="flex justify-center items-center h-[1.2em] overflow-visible"
           >
             {displayText}
           </span>

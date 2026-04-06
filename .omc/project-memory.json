@@ -170,6 +170,12 @@
       "type": "file"
     },
     {
+      "path": "src/components/Hero.tsx",
+      "accessCount": 7,
+      "lastAccessed": 1775481661609,
+      "type": "file"
+    },
+    {
       "path": "src/pages/blog/[slug].astro",
       "accessCount": 6,
       "lastAccessed": 1775473258374,
@@ -194,15 +200,15 @@
       "type": "file"
     },
     {
-      "path": "src/components/Hero.tsx",
-      "accessCount": 4,
-      "lastAccessed": 1775481113523,
-      "type": "file"
-    },
-    {
       "path": "src/content.config.ts",
       "accessCount": 3,
       "lastAccessed": 1775475054767,
+      "type": "file"
+    },
+    {
+      "path": "src/components/About.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1775481606374,
       "type": "file"
     },
     {
@@ -227,12 +233,6 @@
       "path": "src/components/Contact.tsx",
       "accessCount": 2,
       "lastAccessed": 1775480508650,
-      "type": "file"
-    },
-    {
-      "path": "src/components/About.tsx",
-      "accessCount": 2,
-      "lastAccessed": 1775481266657,
       "type": "file"
     },
     {
