@@ -11,14 +11,45 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const body = entry.body;
-const date = entry.data.date ? new Date(entry.data.date).toISOString().split('T')[0] : undefined;
+
+function getRichText(value: any): string {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  if (Array.isArray(value)) {
+    return value.map((v) => v.plain_text || '').join('');
+  }
+  return '';
+}
+
+function processBody(body: string): string {
+  if (!body) return '';
+  return body.replace(/<img __ASTRO_IMAGE_="([^"]+)"[^>]*>/g, (match, encodedJson) => {
+    try {
+      const jsonStr = encodedJson
+        .replace(/&#x22;/g, '"')
+        .replace(/&#x2F;/g, '/');
+      const data = JSON.parse(jsonStr);
+      if (data.src) {
+        const filename = data.src.split('/').pop();
+        const publicUrl = `/images/notion/${filename}`;
+        return `<img src="${publicUrl}" alt="" class="w-full h-auto rounded-lg" loading="lazy" />`;
+      }
+    } catch (e) {}
+    return match;
+  });
+}
+
+const title = getRichText(entry.data.properties?.Title?.title);
+const rawBody = (entry as any).rendered?.html || entry.body || '';
+const body = processBody(rawBody);
+const date = entry.data.properties?.Date?.date?.start || undefined;
+const tags = (entry.data.properties?.Tags?.multi_select || []).map((t: any) => t.name);
 ---
 
 <ArticleLayout
-  title={entry.title}
+  title={title}
   date={date}
-  tags={entry.data.tags || []}
+  tags={tags}
   backHref="/#blog"
 >
   <div set:html={body} />

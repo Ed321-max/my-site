@@ -15,24 +15,38 @@ const portfolioEntries = await getCollection('portfolio');
 const blogEntries = await getCollection('blog');
 const journalEntries = await getCollection('journal');
 
+function getRichText(value: any): string {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  if (Array.isArray(value)) {
+    return value.map((v) => v.plain_text || '').join('');
+  }
+  return '';
+}
+
+// Covers are downloaded by prebuild script to public/images/covers/{prefix}-{slug}.webp
+function getCoverImageUrl(prefix: string, slug: string): string {
+  return `/images/covers/${prefix}-${slug}.webp`;
+}
+
 const journalItems = journalEntries
-  .sort((a, b) => new Date(b.data.date ?? 0).getTime() - new Date(a.data.date ?? 0).getTime())
+  .sort((a, b) => new Date(b.data.properties?.Date?.date?.start ?? 0).getTime() - new Date(a.data.properties?.Date?.date?.start ?? 0).getTime())
   .slice(0, 12)
   .map((entry) => ({
     id: entry.id,
-    image: entry.data.image || '',
-    date: entry.data.date ? new Date(entry.data.date).toISOString().split('T')[0] : '',
-    caption: entry.data.caption || '',
+    image: getCoverImageUrl('journal', entry.id),
+    date: entry.data.properties?.Date?.date?.start ? new Date(entry.data.properties.Date.date.start).toISOString().split('T')[0] : '',
+    caption: getRichText(entry.data.properties?.Caption?.rich_text),
   }));
 
 const portfolioItems = portfolioEntries
   .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
   .map((entry) => ({
     id: entry.id,
-    title: entry.title,
-    description: entry.data.summary || '',
-    tags: entry.data.tags || [],
-    coverImage: entry.data.cover || undefined,
+    title: getRichText(entry.data.properties?.Title?.title),
+    description: getRichText(entry.data.properties?.Summary?.rich_text),
+    tags: (entry.data.properties?.Tags?.multi_select || []).map((t: any) => t.name),
+    coverImage: getCoverImageUrl('portfolio', entry.id),
     slug: entry.id,
   }));
 
@@ -40,11 +54,11 @@ const blogItems = blogEntries
   .sort((a, b) => new Date(b.data.date ?? 0).getTime() - new Date(a.data.date ?? 0).getTime())
   .map((entry) => ({
     id: entry.id,
-    title: entry.title,
-    date: entry.data.date ? new Date(entry.data.date).toISOString().split('T')[0] : '',
-    summary: entry.data.summary || '',
-    tags: entry.data.tags || [],
-    source: entry.data.source || '',
+    title: getRichText(entry.data.properties?.Title?.title),
+    date: entry.data.properties?.Date?.date?.start || '',
+    summary: getRichText(entry.data.properties?.Summary?.rich_text),
+    tags: (entry.data.properties?.Tags?.multi_select || []).map((t: any) => t.name),
+    source: entry.data.properties?.Source?.url || '',
     slug: entry.id,
   }));
 ---
@@ -57,7 +71,7 @@ const blogItems = blogEntries
       <About client:visible />
       <Portfolio items={portfolioItems} client:visible />
       <Blog items={blogItems} client:visible />
-      <Journal items={journalItems} client:visible />
+      <Journal items={journalItems} client:load />
       <Contact client:visible />
     </SiteWrapper>
     <Footer />

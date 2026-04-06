@@ -15,6 +15,7 @@ export default function PortfolioCard({ title, description, tags, coverImage, sl
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(!window.matchMedia('(hover: hover)').matches);
@@ -48,9 +49,18 @@ export default function PortfolioCard({ title, description, tags, coverImage, sl
         whileHover={isMobile ? {} : { scale: 1.02 }}
         style={{ transformStyle: 'preserve-3d', transition: 'transform 0.2s ease-out' }}
       >
-        {coverImage && (
+        {coverImage && !imgError ? (
           <div className="mb-4 rounded-lg overflow-hidden">
-            <img src={coverImage} alt={title} className="w-full h-40 object-cover" />
+            <img
+              src={coverImage}
+              alt={title}
+              className="w-full h-40 object-cover"
+              onError={() => setImgError(true)}
+            />
+          </div>
+        ) : (
+          <div className="mb-4 rounded-lg overflow-hidden w-full h-40 bg-white/5 flex items-center justify-center">
+            <span className="text-gray-500 text-sm">{title}</span>
           </div>
         )}
 

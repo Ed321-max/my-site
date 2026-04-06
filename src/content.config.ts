@@ -6,6 +6,7 @@ const portfolio = defineCollection({
     auth: import.meta.env.NOTION_TOKEN,
     database_id: import.meta.env.NOTION_PORTFOLIO_DB_ID,
     filter: { property: "Published", checkbox: { equals: true } },
+    downloadImages: true,
   }),
 });
 
@@ -14,6 +15,7 @@ const blog = defineCollection({
     auth: import.meta.env.NOTION_TOKEN,
     database_id: import.meta.env.NOTION_BLOG_DB_ID,
     filter: { property: "Published", checkbox: { equals: true } },
+    downloadImages: true,
   }),
 });
 
@@ -22,6 +24,7 @@ const journal = defineCollection({
     auth: import.meta.env.NOTION_TOKEN,
     database_id: import.meta.env.NOTION_JOURNAL_DB_ID,
     filter: { property: "Published", checkbox: { equals: true } },
+    downloadImages: true,
   }),
 });
 
