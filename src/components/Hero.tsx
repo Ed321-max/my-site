@@ -82,9 +82,9 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight">
           <span
             ref={typewriterRef}
-            className="block h-[1.2em] overflow-visible"
+            className="block h-[1.2em] overflow-visible text-center"
           >
-            <span className="block whitespace-nowrap">{displayText}</span>
+            <span className="block whitespace-nowrap text-center">{displayText}</span>
           </span>
         </h1>
 
