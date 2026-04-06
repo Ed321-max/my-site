@@ -152,6 +152,12 @@
       "type": "file"
     },
     {
+      "path": "src/components/Hero.tsx",
+      "accessCount": 12,
+      "lastAccessed": 1775482213759,
+      "type": "file"
+    },
+    {
       "path": "src/pages/portfolio/[slug].astro",
       "accessCount": 10,
       "lastAccessed": 1775477405244,
@@ -167,12 +173,6 @@
       "path": "src/components/Journal.tsx",
       "accessCount": 7,
       "lastAccessed": 1775478401705,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Hero.tsx",
-      "accessCount": 7,
-      "lastAccessed": 1775481661609,
       "type": "file"
     },
     {
