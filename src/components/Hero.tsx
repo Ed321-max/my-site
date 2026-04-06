@@ -79,15 +79,6 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="text-center max-w-3xl"
       >
-        <motion.p
-          className="text-[var(--color-text-muted)] text-sm mb-4 tracking-widest uppercase"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          慢变量
-        </motion.p>
-
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight">
           <span
             ref={typewriterRef}
@@ -95,11 +86,6 @@ export default function Hero() {
           >
             <span className="block whitespace-nowrap">{displayText}</span>
           </span>
-          <motion.span
-            className="inline-block w-0.5 h-[0.9em] bg-[#f5f5f7] ml-2 align-middle"
-            animate={{ opacity: [1, 0] }}
-            transition={{ repeat: Infinity, duration: 0.8 }}
-          />
         </h1>
 
         <motion.p
