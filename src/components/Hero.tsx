@@ -1,48 +1,64 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-// TODO: Replace with your actual typewriter words
-const typewriterWords = [
-  'Build products that matter.',
-  'Ship fast without breaking things.',
-  'Design with data and taste.',
+const desktopWords = [
+  'Where technology meets humanity.',
+  'Quiet forces. Lasting change.',
+  'Small causes. Big emergence.',
 ];
 
-// TODO: Replace with your actual tagline
-const tagline = 'I build products that bridge the gap between AI capability and human need.';
+const mobileWords = [
+  'Tech meets humanity.',
+  'Quiet forces.',
+  'Lasting change.',
+];
 
 export default function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const typewriterRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const currentWord = typewriterWords[currentWordIndex];
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting) {
-          if (displayText.length < currentWord.length) {
-            setDisplayText(currentWord.slice(0, displayText.length + 1));
-          } else {
-            setTimeout(() => setIsDeleting(true), 2000);
-          }
+  const words = isMobile ? mobileWords : desktopWords;
+
+  useEffect(() => {
+    const currentWord = words[currentWordIndex];
+    const pauseDuration = 3000;
+
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const tick = () => {
+      if (!isDeleting) {
+        if (displayText.length < currentWord.length) {
+          setDisplayText(currentWord.slice(0, displayText.length + 1));
+          timeout = setTimeout(tick, isMobile ? 80 : 100);
         } else {
-          if (displayText.length > 0) {
-            setDisplayText(displayText.slice(0, -1));
-          } else {
-            setIsDeleting(false);
-            setCurrentWordIndex((prev) => (prev + 1) % typewriterWords.length);
-          }
+          timeout = setTimeout(() => setIsDeleting(true), pauseDuration);
         }
-      },
-      isDeleting ? 50 : 100
-    );
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(displayText.slice(0, -1));
+          timeout = setTimeout(tick, isMobile ? 40 : 50);
+        } else {
+          setIsDeleting(false);
+          setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        }
+      }
+    };
 
+    timeout = setTimeout(tick, isDeleting ? 50 : isMobile ? 80 : 100);
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentWordIndex]);
+  }, [displayText, isDeleting, currentWordIndex, words, isMobile]);
 
   const scrollTo = (href: string) => {
     if ((window as any).__lenisScrollTo) {
@@ -69,25 +85,30 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          AI Product Manager · Vibe Coder
+          Slow Factor
         </motion.p>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          <span className="block">{displayText}</span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+          <span
+            ref={typewriterRef}
+            className="block h-[1.2em] overflow-hidden"
+          >
+            <span className="block">{displayText}</span>
+          </span>
           <motion.span
-            className="inline-block w-1 h-full bg-[var(--color-accent)] ml-2 align-middle"
+            className="inline-block w-1 h-[0.8em] bg-[var(--color-accent)] ml-2 align-middle"
             animate={{ opacity: [1, 0] }}
             transition={{ repeat: Infinity, duration: 0.8 }}
           />
         </h1>
 
         <motion.p
-          className="text-[var(--color-text-muted)] text-lg md:text-xl max-w-xl mx-auto"
+          className="text-[var(--color-text-muted)] text-base md:text-lg max-w-xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          {tagline}
+          关注那些在科技与人文交汇处不喧哗却塑造每个人的"慢因子"。
         </motion.p>
 
         <motion.div

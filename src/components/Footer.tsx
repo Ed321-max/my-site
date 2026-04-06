@@ -1,10 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useState } from 'react';
 
 function WechatPopover({ onClose }: { onClose: () => void }) {
   return (
@@ -28,28 +24,8 @@ function WechatPopover({ onClose }: { onClose: () => void }) {
   );
 }
 
-export default function Contact() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+export default function Footer() {
   const [showWechat, setShowWechat] = useState(false);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(contentRef.current?.children ?? [], {
-        opacity: 0,
-        y: 30,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1],
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 60%',
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   const socialLinks = [
     {
@@ -103,57 +79,39 @@ export default function Contact() {
 
   return (
     <>
-      <section
-        ref={sectionRef}
-        id="contact"
-        className="py-[var(--spacing-section)] px-6 bg-[var(--color-surface)]"
-      >
-        <div ref={contentRef} className="max-w-3xl mx-auto text-center">
-          <p className="text-[var(--color-text-muted)] text-sm mb-4 tracking-widest uppercase">
-            Contact
-          </p>
-
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            保持联系
-          </h2>
-
-          <p className="text-[var(--color-text-muted)] text-base mb-10 max-w-xl mx-auto">
-            有想法或合作机会？直接写邮件给我。
-          </p>
-
-          <div className="flex justify-center gap-6 mt-10">
-            {socialLinks.map(({ label, href, icon, onClick }) => (
-              onClick ? (
-                <button
-                  key={label}
-                  onClick={onClick}
-                  className="w-12 h-12 flex items-center justify-center rounded-full border border-[var(--color-border)] hover:border-[var(--color-text-muted)] transition-colors text-[var(--color-text-muted)] hover:text-[var(--color-text)] group relative"
-                  aria-label={label}
-                >
-                  {icon}
-                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-[#2c2c2e] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                    {label}
-                  </span>
-                </button>
-              ) : (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-full border border-[var(--color-border)] hover:border-[var(--color-text-muted)] transition-colors text-[var(--color-text-muted)] hover:text-[var(--color-text)] group relative"
-                  aria-label={label}
-                >
-                  {icon}
-                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-[#2c2c2e] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                    {label}
-                  </span>
-                </a>
-              )
-            ))}
-          </div>
+      <footer className="py-8 px-6 border-t border-[var(--color-border)]">
+        <div className="max-w-3xl mx-auto flex justify-center gap-6">
+          {socialLinks.map(({ label, href, icon, onClick }) =>
+            onClick ? (
+              <button
+                key={label}
+                onClick={onClick}
+                className="text-[#888] hover:text-[#f5f5f7] transition-colors group relative"
+                aria-label={label}
+              >
+                {icon}
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-[#2c2c2e] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                  {label}
+                </span>
+              </button>
+            ) : (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#888] hover:text-[#f5f5f7] transition-colors group relative"
+                aria-label={label}
+              >
+                {icon}
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-[#2c2c2e] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                  {label}
+                </span>
+              </a>
+            )
+          )}
         </div>
-      </section>
+      </footer>
 
       {showWechat && <WechatPopover onClose={() => setShowWechat(false)} />}
     </>

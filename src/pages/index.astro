@@ -6,7 +6,47 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
 import Blog from '../components/Blog';
+import Journal from '../components/Journal';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import { getCollection } from 'astro:content';
+
+const portfolioEntries = await getCollection('portfolio');
+const blogEntries = await getCollection('blog');
+const journalEntries = await getCollection('journal');
+
+const journalItems = journalEntries
+  .sort((a, b) => new Date(b.data.date ?? 0).getTime() - new Date(a.data.date ?? 0).getTime())
+  .slice(0, 12)
+  .map((entry) => ({
+    id: entry.id,
+    image: entry.data.image || '',
+    date: entry.data.date ? new Date(entry.data.date).toISOString().split('T')[0] : '',
+    caption: entry.data.caption || '',
+  }));
+
+const portfolioItems = portfolioEntries
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+  .map((entry) => ({
+    id: entry.id,
+    title: entry.title,
+    description: entry.data.summary || '',
+    tags: entry.data.tags || [],
+    coverImage: entry.data.cover || undefined,
+    slug: entry.id,
+  }));
+
+const blogItems = blogEntries
+  .sort((a, b) => new Date(b.data.date ?? 0).getTime() - new Date(a.data.date ?? 0).getTime())
+  .map((entry) => ({
+    id: entry.id,
+    title: entry.title,
+    date: entry.data.date ? new Date(entry.data.date).toISOString().split('T')[0] : '',
+    summary: entry.data.summary || '',
+    tags: entry.data.tags || [],
+    source: entry.data.source || '',
+    slug: entry.id,
+  }));
 ---
 
 <Layout>
@@ -15,9 +55,11 @@ import Contact from '../components/Contact';
     <SiteWrapper client:load>
       <Hero client:load />
       <About client:visible />
-      <Portfolio client:visible />
-      <Blog client:visible />
+      <Portfolio items={portfolioItems} client:visible />
+      <Blog items={blogItems} client:visible />
+      <Journal items={journalItems} client:visible />
       <Contact client:visible />
     </SiteWrapper>
+    <Footer />
   </main>
 </Layout>

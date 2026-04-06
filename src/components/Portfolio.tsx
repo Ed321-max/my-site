@@ -1,50 +1,31 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import PortfolioCard from './PortfolioCard';
-import PortfolioModal from './PortfolioModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// TODO: Replace with your actual portfolio data
-const portfolioItems = [
-  {
-    id: 1,
-    title: 'AI Writing Assistant',
-    description: 'An LLM-powered writing tool for product managers',
-    role: 'Led product strategy, UX design, and cross-functional alignment',
-    outcome: '40% reduction in writing time for early users',
-    tags: ['AI/ML', 'GPT-4', 'Product Strategy'],
-  },
-  {
-    id: 2,
-    title: 'Data Dashboard Redesign',
-    description: 'Redesigned analytics dashboard for enterprise users',
-    role: 'Product lead from research to launch',
-    outcome: 'NPS increased from 32 to 58 post-launch',
-    tags: ['UX Research', 'Data Viz', 'B2B SaaS'],
-  },
-  {
-    id: 3,
-    title: 'Mobile App Launch',
-    description: 'Scaled mobile app from 0 to 100k users in 6 months',
-    role: 'End-to-end product ownership',
-    outcome: 'Featured in App Store "Apps We Love"',
-    tags: ['Mobile', 'Growth', 'Product-Market Fit'],
-  },
-];
+interface PortfolioItem {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  coverImage?: string;
+  slug: string;
+}
 
-type PortfolioItem = typeof portfolioItems[0];
+interface PortfolioProps {
+  items: PortfolioItem[];
+}
 
-export default function Portfolio() {
-  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Portfolio({ items }: PortfolioProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!items.length) return;
     const ctx = gsap.context(() => {
       gsap.from(gridRef.current?.children ?? [], {
         opacity: 0,
@@ -60,12 +41,9 @@ export default function Portfolio() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [items]);
 
-  const handleExpand = (item: PortfolioItem) => {
-    setSelectedItem(item);
-    setIsModalOpen(true);
-  };
+  if (!items.length) return null;
 
   return (
     <section
@@ -82,23 +60,18 @@ export default function Portfolio() {
         </h2>
 
         <div ref={gridRef} className="grid md:grid-cols-2 gap-6">
-          {portfolioItems.map((item) => (
+          {items.map((item) => (
             <PortfolioCard
               key={item.id}
               title={item.title}
               description={item.description}
-              tags={item.tags}
-              onExpand={() => handleExpand(item)}
+              tags={item.tags || []}
+              coverImage={item.coverImage}
+              slug={item.slug}
             />
           ))}
         </div>
       </div>
-
-      <PortfolioModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        item={selectedItem}
-      />
     </section>
   );
 }

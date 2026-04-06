@@ -12,7 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astro-notion/loader": "^1.1.2",
     "@astrojs/react": "^5.0.2",
+    "@astrojs/vercel": "^10.0.3",
+    "@notionhq/client": "^5.16.0",
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
