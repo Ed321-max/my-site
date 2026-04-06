@@ -182,6 +182,12 @@
       "type": "file"
     },
     {
+      "path": "src/components/About.tsx",
+      "accessCount": 7,
+      "lastAccessed": 1775483847796,
+      "type": "file"
+    },
+    {
       "path": "src/pages/blog/[slug].astro",
       "accessCount": 6,
       "lastAccessed": 1775473258374,
@@ -194,9 +200,9 @@
       "type": "file"
     },
     {
-      "path": "src/components/About.tsx",
+      "path": "src/layouts/Layout.astro",
       "accessCount": 5,
-      "lastAccessed": 1775482990260,
+      "lastAccessed": 1775483842070,
       "type": "file"
     },
     {
@@ -212,16 +218,22 @@
       "type": "file"
     },
     {
+      "path": "src/components/Navigation.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1775483823922,
+      "type": "directory"
+    },
+    {
+      "path": "src",
+      "accessCount": 4,
+      "lastAccessed": 1775483863978,
+      "type": "directory"
+    },
+    {
       "path": "src/content.config.ts",
       "accessCount": 3,
       "lastAccessed": 1775475054767,
       "type": "file"
-    },
-    {
-      "path": "src/components/Navigation.tsx",
-      "accessCount": 3,
-      "lastAccessed": 1775482949985,
-      "type": "directory"
     },
     {
       "path": "package.json",
@@ -242,27 +254,21 @@
       "type": "file"
     },
     {
-      "path": "src",
-      "accessCount": 2,
-      "lastAccessed": 1775481280273,
-      "type": "directory"
-    },
-    {
       "path": "src/components/Portfolio.tsx",
       "accessCount": 2,
       "lastAccessed": 1775482776747,
       "type": "file"
     },
     {
-      "path": "src/layouts/Layout.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775482810360,
-      "type": "file"
-    },
-    {
       "path": "src/components/SiteWrapper.tsx",
       "accessCount": 2,
       "lastAccessed": 1775482817114,
+      "type": "directory"
+    },
+    {
+      "path": "src/components",
+      "accessCount": 2,
+      "lastAccessed": 1775483852353,
       "type": "directory"
     },
     {
@@ -282,12 +288,6 @@
       "accessCount": 1,
       "lastAccessed": 1775478380076,
       "type": "file"
-    },
-    {
-      "path": "src/components",
-      "accessCount": 1,
-      "lastAccessed": 1775481061035,
-      "type": "directory"
     },
     {
       "path": "src/styles",
