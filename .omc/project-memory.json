@@ -1,0 +1,300 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775468746594,
+  "projectRoot": "/Users/mima0000/my-site",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": ">=22.12.0",
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "astro",
+        "version": "6.1.0",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "19.2.4",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.4",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": "Node.js 22.12.0"
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "astro dev",
+      "build": "astro build",
+      "preview": "astro preview",
+      "astro": "astro"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "public",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 9,
+      "lastAccessed": 1775468746571,
+      "keyFiles": [
+        "apple-touch-icon.png",
+        "favicon-96x96.png",
+        "favicon.ico",
+        "favicon.svg",
+        "index.html"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 0,
+      "lastAccessed": 1775468746571,
+      "keyFiles": []
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 8,
+      "lastAccessed": 1775468746574,
+      "keyFiles": [
+        "apple-touch-icon.png",
+        "favicon-96x96.png",
+        "favicon.ico",
+        "favicon.svg",
+        "site.webmanifest"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 1,
+      "lastAccessed": 1775468746574,
+      "keyFiles": [
+        "content.config.ts"
+      ]
+    },
+    "src/assets": {
+      "path": "src/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1775468746575,
+      "keyFiles": []
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 11,
+      "lastAccessed": 1775468746576,
+      "keyFiles": [
+        "About.tsx",
+        "Blog.tsx",
+        "Contact.tsx"
+      ]
+    },
+    "src/pages": {
+      "path": "src/pages",
+      "purpose": "Page components",
+      "fileCount": 1,
+      "lastAccessed": 1775468746576,
+      "keyFiles": [
+        "index.astro"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/pages/index.astro",
+      "accessCount": 27,
+      "lastAccessed": 1775476914491,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/portfolio/[slug].astro",
+      "accessCount": 10,
+      "lastAccessed": 1775477405244,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 9,
+      "lastAccessed": 1775475285073,
+      "type": "directory"
+    },
+    {
+      "path": "src/components/Journal.tsx",
+      "accessCount": 7,
+      "lastAccessed": 1775478401705,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/blog/[slug].astro",
+      "accessCount": 6,
+      "lastAccessed": 1775473258374,
+      "type": "file"
+    },
+    {
+      "path": "src/components/PortfolioCard.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1775474260626,
+      "type": "file"
+    },
+    {
+      "path": "scripts/download-covers.mjs",
+      "accessCount": 5,
+      "lastAccessed": 1775476977326,
+      "type": "file"
+    },
+    {
+      "path": "src/layouts/ArticleLayout.astro",
+      "accessCount": 4,
+      "lastAccessed": 1775474213010,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Hero.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1775481113523,
+      "type": "file"
+    },
+    {
+      "path": "src/content.config.ts",
+      "accessCount": 3,
+      "lastAccessed": 1775475054767,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/global.css",
+      "accessCount": 2,
+      "lastAccessed": 1775474226831,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 2,
+      "lastAccessed": 1775476860674,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Footer.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1775480503605,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Contact.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1775480508650,
+      "type": "file"
+    },
+    {
+      "path": "src/components/About.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1775481266657,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 2,
+      "lastAccessed": 1775481280273,
+      "type": "directory"
+    },
+    {
+      "path": ".astro/data-store.json",
+      "accessCount": 1,
+      "lastAccessed": 1775468754683,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Portfolio.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1775469095588,
+      "type": "file"
+    },
+    {
+      "path": "astro.config.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1775470995575,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/journal/[slug].astro",
+      "accessCount": 1,
+      "lastAccessed": 1775478380076,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Navigation.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1775478421322,
+      "type": "directory"
+    },
+    {
+      "path": "src/components",
+      "accessCount": 1,
+      "lastAccessed": 1775481061035,
+      "type": "directory"
+    },
+    {
+      "path": "src/styles",
+      "accessCount": 1,
+      "lastAccessed": 1775481271060,
+      "type": "directory"
+    },
+    {
+      "path": "src/contexts/LenisContext.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1775481286052,
+      "type": "file"
+    },
+    {
+      "path": "src/layouts/Layout.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775481289366,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

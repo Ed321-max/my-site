@@ -71,20 +71,20 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center items-center px-6 pt-20"
+      className="min-h-screen flex flex-col justify-center items-center px-6"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="text-center max-w-3xl"
+        className="flex flex-col items-center text-center max-w-3xl"
       >
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight">
+        <h1 className="flex justify-center items-center w-full text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight">
           <span
             ref={typewriterRef}
-            className="block h-[1.2em] overflow-visible text-center"
+            className="flex items-center h-[1.2em] overflow-visible"
           >
-            <span className="block whitespace-nowrap text-center">{displayText}</span>
+            {displayText}
           </span>
         </h1>
 
