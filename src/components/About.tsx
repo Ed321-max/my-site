@@ -42,11 +42,11 @@ export default function About() {
         </p>
 
         <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
-          <div className="shrink-0">
+          <div className="shrink-0 self-center md:self-auto">
             <img
               src="/images/avatar.png"
               alt="Avatar"
-              className="w-32 h-32 rounded-full object-cover"
+              className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover max-w-full"
             />
           </div>
           <div className="flex-1">

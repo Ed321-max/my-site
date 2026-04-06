@@ -54,12 +54,12 @@ export default function PortfolioCard({ title, description, tags, coverImage, sl
             <img
               src={coverImage}
               alt={title}
-              className="w-full h-40 object-cover"
+              className="w-full h-48 sm:h-52 md:h-56 object-cover max-w-full"
               onError={() => setImgError(true)}
             />
           </div>
         ) : (
-          <div className="mb-4 rounded-lg overflow-hidden w-full h-40 bg-white/5 flex items-center justify-center">
+          <div className="mb-4 rounded-lg overflow-hidden w-full h-48 sm:h-52 md:h-56 bg-white/5 flex items-center justify-center">
             <span className="text-gray-500 text-sm">{title}</span>
           </div>
         )}
