@@ -188,6 +188,12 @@
       "type": "directory"
     },
     {
+      "path": "src/layouts/Layout.astro",
+      "accessCount": 9,
+      "lastAccessed": 1775833545330,
+      "type": "file"
+    },
+    {
       "path": "src/components/PortfolioCard.tsx",
       "accessCount": 8,
       "lastAccessed": 1775485314627,
@@ -206,9 +212,15 @@
       "type": "file"
     },
     {
-      "path": "src/layouts/Layout.astro",
+      "path": "src",
       "accessCount": 7,
-      "lastAccessed": 1775485314605,
+      "lastAccessed": 1775832546763,
+      "type": "directory"
+    },
+    {
+      "path": "src/styles/global.css",
+      "accessCount": 7,
+      "lastAccessed": 1775833565950,
       "type": "file"
     },
     {
@@ -219,27 +231,15 @@
     },
     {
       "path": "scripts/download-covers.mjs",
-      "accessCount": 5,
-      "lastAccessed": 1775476977326,
+      "accessCount": 6,
+      "lastAccessed": 1775832562187,
       "type": "file"
-    },
-    {
-      "path": "src",
-      "accessCount": 5,
-      "lastAccessed": 1775485301206,
-      "type": "directory"
     },
     {
       "path": "src/components/Navigation.tsx",
       "accessCount": 5,
       "lastAccessed": 1775485308435,
       "type": "directory"
-    },
-    {
-      "path": "src/styles/global.css",
-      "accessCount": 5,
-      "lastAccessed": 1775485314738,
-      "type": "file"
     },
     {
       "path": "src/layouts/ArticleLayout.astro",
@@ -249,8 +249,8 @@
     },
     {
       "path": "src/content.config.ts",
-      "accessCount": 3,
-      "lastAccessed": 1775475054767,
+      "accessCount": 4,
+      "lastAccessed": 1775832557502,
       "type": "file"
     },
     {
@@ -261,8 +261,8 @@
     },
     {
       "path": "package.json",
-      "accessCount": 2,
-      "lastAccessed": 1775476860674,
+      "accessCount": 3,
+      "lastAccessed": 1775832546706,
       "type": "file"
     },
     {
