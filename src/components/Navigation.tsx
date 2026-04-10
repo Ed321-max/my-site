@@ -65,7 +65,7 @@ export default function Navigation() {
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex fixed top-0 left-0 right-0 z-50 px-6 py-4 justify-between items-center border-b border-[var(--color-border)] bg-[#2c2c2e]/80 backdrop-blur-md">
         <img src="/images/logo.webp" alt="Slow Factor" className="h-8 w-auto max-w-[120px]" />
-        <div className="flex gap-8">
+        <div className="flex gap-6 md:gap-8">
           {navLinks.map(({ href, label }) => (
             <a
               key={href}

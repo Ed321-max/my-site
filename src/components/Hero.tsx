@@ -77,9 +77,9 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="flex flex-col items-center text-center max-w-5xl mx-auto px-6"
+        className="flex flex-col items-center text-center max-w-5xl mx-auto px-4 sm:px-6"
       >
-        <h1 className="flex justify-center items-center w-full text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight overflow-visible">
+        <h1 className="flex justify-center items-center w-full text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight overflow-visible">
           <span
             ref={typewriterRef}
             className="flex justify-center items-center h-auto overflow-visible"
