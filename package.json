@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node --env-file=.env scripts/download-covers.mjs && node scripts/copy-notion-images.mjs",
+    "prebuild": "node scripts/download-covers.mjs && node scripts/copy-notion-images.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
