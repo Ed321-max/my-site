@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1775468746594,
+  "lastScanned": 1776351968716,
   "projectRoot": "/Users/mima0000/my-site",
   "techStack": {
     "languages": [
@@ -48,6 +48,7 @@
     "devCommand": "npm run dev",
     "scripts": {
       "dev": "astro dev",
+      "prebuild": "node --env-file=.env scripts/download-covers.mjs && node scripts/copy-notion-images.mjs",
       "build": "astro build",
       "preview": "astro preview",
       "astro": "astro"
@@ -65,6 +66,7 @@
     "mainDirectories": [
       "docs",
       "public",
+      "scripts",
       "src"
     ],
     "gitBranches": {
@@ -78,7 +80,7 @@
       "path": "dist",
       "purpose": "Distribution/build output",
       "fileCount": 9,
-      "lastAccessed": 1775468746571,
+      "lastAccessed": 1776351968699,
       "keyFiles": [
         "apple-touch-icon.png",
         "favicon-96x96.png",
@@ -91,14 +93,14 @@
       "path": "docs",
       "purpose": "Documentation",
       "fileCount": 0,
-      "lastAccessed": 1775468746571,
+      "lastAccessed": 1776351968703,
       "keyFiles": []
     },
     "public": {
       "path": "public",
       "purpose": "Public files",
       "fileCount": 8,
-      "lastAccessed": 1775468746574,
+      "lastAccessed": 1776351968703,
       "keyFiles": [
         "apple-touch-icon.png",
         "favicon-96x96.png",
@@ -107,11 +109,21 @@
         "site.webmanifest"
       ]
     },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 2,
+      "lastAccessed": 1776351968704,
+      "keyFiles": [
+        "copy-notion-images.mjs",
+        "download-covers.mjs"
+      ]
+    },
     "src": {
       "path": "src",
       "purpose": "Source code",
       "fileCount": 1,
-      "lastAccessed": 1775468746574,
+      "lastAccessed": 1776351968704,
       "keyFiles": [
         "content.config.ts"
       ]
@@ -120,14 +132,14 @@
       "path": "src/assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1775468746575,
+      "lastAccessed": 1776351968705,
       "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 11,
-      "lastAccessed": 1775468746576,
+      "lastAccessed": 1776351968705,
       "keyFiles": [
         "About.tsx",
         "Blog.tsx",
@@ -138,7 +150,7 @@
       "path": "src/pages",
       "purpose": "Page components",
       "fileCount": 1,
-      "lastAccessed": 1775468746576,
+      "lastAccessed": 1776351968706,
       "keyFiles": [
         "index.astro"
       ]
@@ -158,6 +170,12 @@
       "type": "file"
     },
     {
+      "path": "",
+      "accessCount": 17,
+      "lastAccessed": 1776352329530,
+      "type": "directory"
+    },
+    {
       "path": "src/components/About.tsx",
       "accessCount": 16,
       "lastAccessed": 1775487440755,
@@ -165,8 +183,8 @@
     },
     {
       "path": "src/components/Journal.tsx",
-      "accessCount": 12,
-      "lastAccessed": 1775487466478,
+      "accessCount": 13,
+      "lastAccessed": 1776090455728,
       "type": "file"
     },
     {
@@ -182,15 +200,15 @@
       "type": "file"
     },
     {
-      "path": "",
-      "accessCount": 10,
-      "lastAccessed": 1775485292222,
-      "type": "directory"
-    },
-    {
       "path": "src/layouts/Layout.astro",
       "accessCount": 9,
       "lastAccessed": 1775833545330,
+      "type": "file"
+    },
+    {
+      "path": "scripts/download-covers.mjs",
+      "accessCount": 9,
+      "lastAccessed": 1776352314220,
       "type": "file"
     },
     {
@@ -213,8 +231,8 @@
     },
     {
       "path": "src",
-      "accessCount": 7,
-      "lastAccessed": 1775832546763,
+      "accessCount": 8,
+      "lastAccessed": 1776090477727,
       "type": "directory"
     },
     {
@@ -224,15 +242,15 @@
       "type": "file"
     },
     {
-      "path": "src/pages/blog/[slug].astro",
-      "accessCount": 6,
-      "lastAccessed": 1775473258374,
+      "path": "package.json",
+      "accessCount": 7,
+      "lastAccessed": 1776091307783,
       "type": "file"
     },
     {
-      "path": "scripts/download-covers.mjs",
-      "accessCount": 6,
-      "lastAccessed": 1775832562187,
+      "path": "src/pages/blog/[slug].astro",
+      "accessCount": 7,
+      "lastAccessed": 1776352334789,
       "type": "file"
     },
     {
@@ -242,15 +260,15 @@
       "type": "directory"
     },
     {
-      "path": "src/layouts/ArticleLayout.astro",
-      "accessCount": 4,
-      "lastAccessed": 1775474213010,
+      "path": "src/content.config.ts",
+      "accessCount": 5,
+      "lastAccessed": 1776090481323,
       "type": "file"
     },
     {
-      "path": "src/content.config.ts",
-      "accessCount": 4,
-      "lastAccessed": 1775832557502,
+      "path": "src/layouts/ArticleLayout.astro",
+      "accessCount": 5,
+      "lastAccessed": 1776352314237,
       "type": "file"
     },
     {
@@ -260,9 +278,9 @@
       "type": "file"
     },
     {
-      "path": "package.json",
+      "path": "scripts/copy-notion-images.mjs",
       "accessCount": 3,
-      "lastAccessed": 1775832546706,
+      "lastAccessed": 1776091188337,
       "type": "file"
     },
     {
@@ -284,21 +302,21 @@
       "type": "file"
     },
     {
-      "path": ".astro/data-store.json",
-      "accessCount": 1,
-      "lastAccessed": 1775468754683,
+      "path": "src/pages/journal/[slug].astro",
+      "accessCount": 2,
+      "lastAccessed": 1776090440019,
       "type": "file"
     },
     {
       "path": "astro.config.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1775470995575,
+      "accessCount": 2,
+      "lastAccessed": 1776090473641,
       "type": "file"
     },
     {
-      "path": "src/pages/journal/[slug].astro",
-      "accessCount": 1,
-      "lastAccessed": 1775478380076,
+      "path": ".astro/data-store.json",
+      "accessCount": 2,
+      "lastAccessed": 1776090481853,
       "type": "file"
     },
     {
