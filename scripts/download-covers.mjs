@@ -1,5 +1,12 @@
 import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
+import sharp from 'sharp';
+
+const MAX_WIDTHS = {
+  journal: 800,
+  portfolio: 1200,
+  blog: 800,
+};
 
 const NOTION_TOKEN = process.env.NOTION_TOKEN;
 const databases = [
@@ -51,7 +58,12 @@ for (const db of databases) {
       continue;
     }
     const buffer = Buffer.from(await response.arrayBuffer());
-    await writeFile(filepath, buffer);
+    const maxWidth = MAX_WIDTHS[db.prefix] || 800;
+    const compressed = await sharp(buffer)
+      .resize(maxWidth, null, { withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toBuffer();
+    await writeFile(filepath, compressed);
   }
 }
 
