@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1777029868267,
+  "lastScanned": 1784367859811,
   "projectRoot": "/Users/mima0000/my-site",
   "techStack": {
     "languages": [
@@ -80,7 +80,7 @@
       "path": "dist",
       "purpose": "Distribution/build output",
       "fileCount": 9,
-      "lastAccessed": 1777029868245,
+      "lastAccessed": 1784367859798,
       "keyFiles": [
         "apple-touch-icon.png",
         "favicon-96x96.png",
@@ -93,14 +93,14 @@
       "path": "docs",
       "purpose": "Documentation",
       "fileCount": 0,
-      "lastAccessed": 1777029868248,
+      "lastAccessed": 1784367859798,
       "keyFiles": []
     },
     "public": {
       "path": "public",
       "purpose": "Public files",
       "fileCount": 8,
-      "lastAccessed": 1777029868249,
+      "lastAccessed": 1784367859801,
       "keyFiles": [
         "apple-touch-icon.png",
         "favicon-96x96.png",
@@ -113,7 +113,7 @@
       "path": "scripts",
       "purpose": "Build/utility scripts",
       "fileCount": 2,
-      "lastAccessed": 1777029868250,
+      "lastAccessed": 1784367859801,
       "keyFiles": [
         "copy-notion-images.mjs",
         "download-covers.mjs"
@@ -123,7 +123,7 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 1,
-      "lastAccessed": 1777029868250,
+      "lastAccessed": 1784367859801,
       "keyFiles": [
         "content.config.ts"
       ]
@@ -132,14 +132,14 @@
       "path": "src/assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1777029868251,
+      "lastAccessed": 1784367859802,
       "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 11,
-      "lastAccessed": 1777029868252,
+      "lastAccessed": 1784367859802,
       "keyFiles": [
         "About.tsx",
         "Blog.tsx",
@@ -150,7 +150,7 @@
       "path": "src/pages",
       "purpose": "Page components",
       "fileCount": 1,
-      "lastAccessed": 1777029868252,
+      "lastAccessed": 1784367859803,
       "keyFiles": [
         "index.astro"
       ]
@@ -200,15 +200,15 @@
       "type": "file"
     },
     {
-      "path": "src/pages/portfolio/[slug].astro",
-      "accessCount": 10,
-      "lastAccessed": 1775477405244,
+      "path": "package.json",
+      "accessCount": 11,
+      "lastAccessed": 1784370159942,
       "type": "file"
     },
     {
-      "path": "package.json",
+      "path": "src/pages/portfolio/[slug].astro",
       "accessCount": 10,
-      "lastAccessed": 1776354454064,
+      "lastAccessed": 1775477405244,
       "type": "file"
     },
     {
