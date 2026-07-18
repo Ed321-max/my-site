@@ -34,7 +34,7 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-[var(--spacing-section)]"
+      className="pt-12 lg:pt-16 pb-[var(--spacing-section)]"
     >
       <div ref={contentRef} className="max-w-5xl mx-auto px-6">
         <p className="text-[var(--color-text-muted)] text-sm mb-4 tracking-widest uppercase">

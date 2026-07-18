@@ -165,8 +165,14 @@
     },
     {
       "path": "src/components/Hero.tsx",
-      "accessCount": 18,
-      "lastAccessed": 1775487434875,
+      "accessCount": 23,
+      "lastAccessed": 1784373613012,
+      "type": "file"
+    },
+    {
+      "path": "src/components/About.tsx",
+      "accessCount": 19,
+      "lastAccessed": 1784373613153,
       "type": "file"
     },
     {
@@ -180,12 +186,6 @@
       "accessCount": 17,
       "lastAccessed": 1776352329530,
       "type": "directory"
-    },
-    {
-      "path": "src/components/About.tsx",
-      "accessCount": 16,
-      "lastAccessed": 1775487440755,
-      "type": "file"
     },
     {
       "path": "scripts/download-covers.mjs",
@@ -243,8 +243,8 @@
     },
     {
       "path": "src/styles/global.css",
-      "accessCount": 7,
-      "lastAccessed": 1775833565950,
+      "accessCount": 8,
+      "lastAccessed": 1784373417706,
       "type": "file"
     },
     {
