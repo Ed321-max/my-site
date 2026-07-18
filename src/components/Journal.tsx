@@ -58,13 +58,11 @@ export default function Journal({ items }: JournalProps) {
 
         <div
           ref={gridRef}
-          className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4"
-          style={{ columnFill: 'balance' }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {items.map((item) => (
             <div
               key={item.id}
-              className="break-inside-avoid mb-4"
             >
               <a
                 href={`/journal/${item.id}`}
@@ -74,7 +72,7 @@ export default function Journal({ items }: JournalProps) {
                   src={item.image}
                   alt={item.caption}
                   loading="lazy"
-                  className="w-full h-48 object-cover transition-transform duration-300 ease group-hover:scale-[1.03]"
+                  className="w-full aspect-[3/2] object-cover transition-transform duration-300 ease group-hover:scale-[1.03]"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
                   <time className="text-xs text-white/70 block mb-1">{item.date}</time>
